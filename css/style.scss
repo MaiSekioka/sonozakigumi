@@ -1,0 +1,60 @@
+@charset 'UTF-8';
+$mainColor: #b3c100;
+$subColor: #34675c;
+$bgColor: #fafafa;
+$textColor: #333333;
+$grayColor: #b7b8b6;
+$tagColor: #4cb5f5;
+
+//breakpoints
+$breakpoint-sm: 375px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 1300px !default;
+$breakpoint-xl: 1500px !default;
+
+$breakpoints: (
+  'sm': 'screen and (max-width: 375px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1300px)',
+  'xl': 'screen and (min-width: 1500px)'
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: $textColor;
+  font-family: Noto Sans JP, “游ゴシック”, “Yu Gothic”, “YuGothic”,”Meiryo”,
+  “Hiragino Sans”, “ヒラギノ角ゴシック”, “Hiragino Kaku Gothic ProN”, “ヒラギノ角ゴ ProN”,
+  “MS Gothic”, “Osaka”, sans-serif;
+  font-size: 1.6rem;
+}
+
+body > * {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: $subColor;
+  text-decoration: none;
+}
+
+/*----------------*/
+/* component      */
+/*----------------*/
