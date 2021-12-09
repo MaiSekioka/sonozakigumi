@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  color: #333333;
+  color: #191919;
   font-family: Noto Sans JP, “游ゴシック”, “Yu Gothic”, “YuGothic”, ”Meiryo”, “Hiragino Sans”, “ヒラギノ角ゴシック”, “Hiragino Kaku Gothic ProN”, “ヒラギノ角ゴ ProN”, “MS Gothic”, “Osaka”, sans-serif;
   font-size: 1.6rem;
 }
@@ -24,7 +24,7 @@ li {
 }
 
 a:link, a:visited, a:hover, a:active {
-  color: #34675c;
+  color: #fff;
   text-decoration: none;
 }
 

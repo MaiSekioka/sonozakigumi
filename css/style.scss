@@ -1,22 +1,19 @@
 @charset 'UTF-8';
-$mainColor: #b3c100;
-$subColor: #34675c;
-$bgColor: #fafafa;
-$textColor: #333333;
-$grayColor: #b7b8b6;
-$tagColor: #4cb5f5;
+$mainColor: #182848;
+$subColor: #4b6cb7;
+$accentColor: #b8614b;
+$textColor: #191919;
+$bgColor: #f0f0f0;
 
 //breakpoints
 $breakpoint-sm: 375px !default;
 $breakpoint-md: 768px !default;
 $breakpoint-lg: 1300px !default;
-$breakpoint-xl: 1500px !default;
 
 $breakpoints: (
   'sm': 'screen and (max-width: 375px)',
   'md': 'screen and (max-width: 768px)',
   'lg': 'screen and (max-width: 1300px)',
-  'xl': 'screen and (min-width: 1500px)'
 ) !default;
 
 @mixin mq($breakpoint: md) {
@@ -54,7 +51,7 @@ li {
 }
 
 a:link, a:visited, a:hover, a:active {
-  color: $subColor;
+  color: #fff;
   text-decoration: none;
 }
 
