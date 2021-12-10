@@ -53,15 +53,17 @@ a:link, a:visited, a:hover, a:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 25px 39px;
+  padding: 25px min(39px,3.2vw);
   margin: 0 auto;
 }
 
 .site-logo {
   width: 136px;
+  min-width: 120px;
   height: 100%;
   background-image: url(../img/1x/logo-w-sm.svg);
-  margin-right: 30px;
+  background-size: contain;
+  margin-right: 2.19%;
 }
 .site-logo__link {
   display: block;
@@ -80,9 +82,12 @@ a:link, a:visited, a:hover, a:active {
 .nav-menu-list__item {
   position: relative;
   padding-bottom: 12px;
+  font-size: 1.6rem;
+  font-size: calc(1.4rem + ((1vw - 7.68px) * 0.3759));
+  min-height: 0vw;
 }
 .nav-menu-list__item + .nav-menu-list__item {
-  margin-left: 38px;
+  margin-left: min(38px,4vw);
 }
 .nav-menu-list__item + .nav-menu-list__item::before {
   position: absolute;
@@ -137,5 +142,9 @@ a:link, a:visited, a:hover, a:active {
 
 .nav-menu-list__item--contact.nav-menu-list__item::after {
   content: "CONTACT";
+}
+
+.nav-menu-list__link {
+  white-space: nowrap;
 }
 /*# sourceMappingURL=style.css.map */
