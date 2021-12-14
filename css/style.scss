@@ -525,7 +525,7 @@ a:link, a:visited, a:hover, a:active {
   padding: 200px 0 160px;
   background-image: url(../img/1x/services-bg.png);
   background-position: top 160px center;
-  background-size: contain;
+  background-size: 100% 435px;
   background-repeat: no-repeat;
 }
 
@@ -562,6 +562,10 @@ a:link, a:visited, a:hover, a:active {
     margin-top: 10%;
   }
 }
+
+/*----------------*/
+/* about          */
+/*----------------*/
 
 /*----------------*/
 /* footer         */
