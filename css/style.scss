@@ -566,7 +566,43 @@ a:link, a:visited, a:hover, a:active {
 /*----------------*/
 /* about          */
 /*----------------*/
+.about {
+  width: 100%;
+  height: 656px;
+  padding: 40px 56px;
+  background-image: url(../img/1x/about-bg.jpg);
+  background-size: cover;
 
+  &-inner {
+    max-width: 1016px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.about-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 49.6%;
+  height: 100%;
+  padding: unquote('min(48px,5vw)');
+  background-color: #fff;
+
+  &__text {
+    margin-top: 6.9%;
+  }
+
+  &__btn {
+    margin-top: 7.8%;
+  }
+
+  &__image {
+    margin-top: 8%;
+  }
+}
 /*----------------*/
 /* footer         */
 /*----------------*/
