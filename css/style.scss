@@ -57,7 +57,111 @@ a:link, a:visited, a:hover, a:active {
 /*----------------*/
 /* component      */
 /*----------------*/
+.section-title {
+  font-size: calc(3.2rem + ((1vw - 7.68px) * 2.6756));
+  min-height: 0vw;
+  font-family: 'Lato';
+  font-weight: 700;
+  line-height: 1;
 
+  @include mq() {
+    font-size: 3.2rem;
+  }
+
+  @include mq(xl) {
+    font-size: 4.8rem;
+  }
+
+  &__jp {
+    position: relative;
+    font-family: Noto Sans JP;
+    font-size: calc(1.7rem + ((1vw - 0.768rem) * 1.1111));
+    color: $subColor;
+    font-weight: 400;
+    min-height: 0vw;
+    margin-left: 38px;
+
+    @include mq() {
+      font-size: 1.6rem;
+    }
+  
+    @include mq(xl) {
+      font-size: 2.4rem;
+    }
+
+    &::before {
+      display: block;
+      position: absolute;
+      content: '';
+      bottom: 50%;
+      left: -33px;
+      width: 31px;
+      height: 1px;
+      background-color: $subColor;
+      transform: rotate(-50deg) translateY(-50%);
+    }
+  }
+}
+
+.section-lead {
+  font-size: calc(2.4rem + ((1vw - 0.768rem) * 1.3377));
+  font-weight: 500;
+
+  @include mq() {
+    font-size: 2.4rem;
+  }
+
+  @include mq(xl) {
+    font-size: 3.2rem;
+  }
+}
+
+.section-text {
+  font-size: calc(1.4rem + ((1vw - 0.768rem) * 0.3344));
+  line-height: 2;
+  letter-spacing: 0.02em;
+
+  @include mq() {
+    font-size: 1.4rem;
+  }
+
+  @include mq(xl) {
+    font-size: 1.6rem;
+  }
+}
+
+.section-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 256px;
+  height: 64px;
+  background-color: $subColor;
+  padding: 24px 0;
+  box-shadow: 0px 2px 4px 0 rgba(24, 40, 72, 0.46);
+  font-size: calc(1.4rem + ((1vw - 0.768rem) * 0.3344));
+  line-height: 1;
+
+  @include mq() {
+    font-size: 1.4rem;
+  }
+
+  @include mq(xl) {
+    font-size: 1.6rem;
+  }
+
+  &__text {
+    margin-right: 16px;
+  }
+
+  &__arrow {
+    width: 16px;
+    height: 4px;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: skewX(45deg);
+  }
+}
 
 /*----------------*/
 /* header         */
@@ -412,6 +516,53 @@ a:link, a:visited, a:hover, a:active {
     }
   }
 }
+
+/*----------------*/
+/* services       */
+/*----------------*/
+.services {
+  width: 100%;
+  padding: 200px 0 160px;
+  background-image: url(../img/1x/services-bg.png);
+  background-position: top 160px center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.service-media {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+
+  &__image {
+    width: 45.38%;
+    min-height: 440px;
+    margin-right: 3.5%;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__body {
+    width: 38.2%;
+  }
+
+  &__lead {
+    margin-top: 5%;
+  }
+
+  &__text {
+    margin-top: 3%;
+  }
+
+  &__btn {
+    margin-top: 10%;
+  }
+}
+
 /*----------------*/
 /* footer         */
 /*----------------*/
