@@ -81,6 +81,16 @@ a:link, a:visited, a:hover, a:active {
           transform: rotate(-50deg) translateY(-50%);
 }
 
+.section-title--white {
+  color: #fff;
+}
+.section-title--white .section-title__jp {
+  color: #fff;
+}
+.section-title--white .section-title__jp::before {
+  background-color: #fff;
+}
+
 .section-lead {
   font-size: calc(2.4rem + ((1vw - 0.768rem) * 1.3377));
   font-weight: 500;
@@ -111,6 +121,10 @@ a:link, a:visited, a:hover, a:active {
   .section-text {
     font-size: 1.6rem;
   }
+}
+
+.section-text--white {
+  color: #fff;
 }
 
 .section-btn {
@@ -826,6 +840,89 @@ a:link, a:visited, a:hover, a:active {
 
 .recruit__btn {
   margin: 40px auto 0;
+}
+
+/*----------------*/
+/* contact        */
+/*----------------*/
+.contact {
+  width: 100%;
+  background-image: url(../img/1x/contact-bg.jpg);
+  background-size: cover;
+  padding: 80px 0;
+  text-align: center;
+}
+.contact__text {
+  margin-top: 40px;
+}
+
+.cta-btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 784px;
+  margin: 55px auto 0;
+  padding: 0 32px;
+}
+
+.cta-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 320px;
+  height: 72px;
+  padding: 28px;
+  -webkit-box-shadow: 0px 2px 4px 0 rgba(25, 25, 25, 0.46);
+          box-shadow: 0px 2px 4px 0 rgba(25, 25, 25, 0.46);
+  font-size: calc(1.4rem + ((1vw - 0.768rem) * 0.3344));
+  line-height: 1;
+}
+@media screen and (max-width: 768px) {
+  .cta-btn {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1366px) {
+  .cta-btn {
+    font-size: 1.6rem;
+  }
+}
+.cta-btn__icon {
+  margin-right: 17px;
+}
+.cta-btn__icon--construction {
+  width: 24px;
+  height: 20px;
+  background-image: url(../img/1x/backhoe.svg);
+}
+.cta-btn__icon--custom-order {
+  width: 20px;
+  height: 17px;
+  background-image: url(../img/1x/factory.svg);
+}
+.cta-btn__arrow {
+  width: 16px;
+  height: 4px;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: skewX(45deg);
+          transform: skewX(45deg);
+  margin-left: 17px;
+}
+.cta-btn--construction {
+  background-color: #b8614b;
+}
+.cta-btn--custom-order {
+  background-color: #191919;
 }
 
 /*----------------*/
