@@ -76,6 +76,7 @@ a:link, a:visited, a:hover, a:active {
     position: relative;
     font-family: Noto Sans JP;
     font-size: calc(1.7rem + ((1vw - 0.768rem) * 1.1111));
+    min-height: 0vw;
     color: $subColor;
     font-weight: 400;
     min-height: 0vw;
@@ -118,6 +119,7 @@ a:link, a:visited, a:hover, a:active {
 
 .section-text {
   font-size: calc(1.4rem + ((1vw - 0.768rem) * 0.3344));
+  min-height: 0vw;
   line-height: 2;
   letter-spacing: 0.02em;
 
@@ -603,6 +605,130 @@ a:link, a:visited, a:hover, a:active {
     margin-top: 8%;
   }
 }
+
+/*----------------*/
+/* works          */
+/*----------------*/
+.works {
+  padding: 160px 0;
+  text-align: center;
+  background-image: url(../img/1x/works-bg.png);
+  background-position: top 160px center;
+  background-size: 100% 762px;
+  background-repeat: no-repeat;
+
+  &__lead {
+    margin-top: 31px;
+  }
+
+  &__text {
+    margin-top: 34px;
+  }
+}
+
+.works-cards {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1104px;
+  max-height: 424px;
+  margin: 33px auto 0;
+  padding: 0 60px 0 52px;
+}
+
+.works-card {
+  position: relative;
+  width: 47.6%;
+  min-height: 100%;
+  margin-top: 16px;
+  margin-left: 16px;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(25, 25, 25, 0.25);
+  counter-increment: number;
+
+  &::before {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    z-index: 1;
+    display: block;
+    content: '0'counter(number);
+    max-width: 56px;
+    max-height: 56px;
+    padding: 16px 15px;
+    background-color: $mainColor;
+    color: #fff;
+    font-size: calc((1.8rem + (1vw - 0.768rem)) * 1.0033);
+    font-family: 'Lato';
+    font-weight: 700;
+    min-height: 0vw;
+    line-height: 1;
+
+    @include mq() {
+      font-size: 1.8rem;
+    }
+  
+    @include mq(xl) {
+      font-size: 2.4rem;
+    }
+
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    padding-top: 50.84%;
+    overflow: hidden;
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    height: 100%;
+  }
+
+  &__body {
+    padding: 30px 24px 36px 25px;
+    text-align: left;
+  }
+
+  &__title {
+    font-size: calc((1.8rem + (1vw - 0.768rem)) * 1.0033);
+    min-height: 0vw;
+    color: $accentColor;
+    font-weight: 500;
+
+    @include mq() {
+      font-size: 1.8rem;
+    }
+
+    @include mq(xl) {
+      font-size: 2.4rem;
+    }
+  }
+
+  &__text {
+    font-size: calc(1.4rem + ((1vw - 0.768rem) * 0.3344));
+    min-height: 0vw;
+    margin-top: 24px;
+    letter-spacing: 0.02em;
+
+    @include mq() {
+      font-size: 1.4rem;
+    }
+  
+    @include mq(xl) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.works__btn {
+  margin: 33px auto 0;
+}
+
 /*----------------*/
 /* footer         */
 /*----------------*/
