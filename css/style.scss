@@ -1444,11 +1444,25 @@ body.is-drawerActive > .header.js-fixed {
   background-color: $mainColor;
   padding: 87px 56px 120px;
 
+  @include mq(){
+    padding: 87px 32px;
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  @include mq(sm) {
+    padding: 40px 20px 43px;
+  }
+
   &__inner {
     max-width: 1017px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+
+    @include mq(){
+      flex-direction: column-reverse;
+    }
   }
 }
 
@@ -1457,6 +1471,16 @@ body.is-drawerActive > .header.js-fixed {
   height: 58px;
   background-image: url(../img/1x/logo-w-lg.svg);
   background-size: contain;
+
+  @include mq(){
+    width: 220px;
+    height: 47px;
+  }
+
+  @include mq(sm){
+    width: 159px;
+    height: 34px;
+  }
 
   &__link {
     display: block;
@@ -1467,9 +1491,21 @@ body.is-drawerActive > .header.js-fixed {
 
 .footer-info {
 
+  @include mq(){
+    margin-top: 80px;
+  }
+
   &__address-box {
     margin-top: 39px;
     font-style: normal;
+
+    @include mq(){
+      margin-top: 32px;
+    }
+
+    @include mq(sm){
+      margin-top: 23px;
+    }
   }
 
   &__text {
@@ -1477,6 +1513,10 @@ body.is-drawerActive > .header.js-fixed {
 
     & + .footer-info__text {
       margin-top: 24px;
+
+      @include mq(){
+        margin-top: 18px;
+      }
     }
   }
 }
@@ -1486,6 +1526,12 @@ body.is-drawerActive > .header.js-fixed {
   margin-left: 56px;
   letter-spacing: 0.2em;
 
+  @include mq(){
+    margin-left: 0;
+    writing-mode: horizontal-tb;
+    letter-spacing: 0;
+  }
+
   .page-link-list {
     margin-right: 78px;
 
@@ -1494,6 +1540,15 @@ body.is-drawerActive > .header.js-fixed {
 
       + .page-link-list__item {
         margin-left: unquote('min(22px,2vw)');
+
+        @include mq(){
+          margin-left: 0;
+          margin-top: 22px;
+        }
+
+        @include mq(sm){
+          margin-top: 24px;
+        }
       }
 
       &:hover {
@@ -1504,11 +1559,25 @@ body.is-drawerActive > .header.js-fixed {
   }
 
   .contact-link-list {
+
+    @include mq(){
+      margin-top: 64px;
+    }
+
     &__item {
       transition: ease .4s;
 
       + .contact-link-list__item {
         margin-left: unquote('min(22px,2vw)');
+
+        @include mq(){
+          margin-left: 0;
+          margin-top: 22px;
+        }
+
+        @include mq(sm){
+          margin-top: 24px;
+        }
       }
 
       &:hover {
@@ -1526,10 +1595,22 @@ body.is-drawerActive > .header.js-fixed {
   color: #fff;
   padding: 0 56px;
 
+  @include mq(){
+    padding: 0 32px;
+  }
+
   &-inner {
     max-width: 1017px;
     padding: 24px 0;
     margin: 0 auto;
+
+    @include mq() {
+      padding: 18px 0;
+    }
+
+    @include mq(sm) {
+      padding: 15px 0;
+    }
   }
 
   &__text {
