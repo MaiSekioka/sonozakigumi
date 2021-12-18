@@ -188,17 +188,19 @@ a:link, a:visited, a:hover, a:active {
     display: block;
   }
 }
+
 /*----------------*/
 /* header         */
 /*----------------*/
 .header {
+  position: relative;
+  z-index: 10;
   width: 100%;
   height: 80px;
   background: linear-gradient(to right, #4b6cb7, #182848);
+  transition: position .3s;
 
   @include mq() {
-    position: relative;
-    z-index: 10;
     height: 56px;
   }
 }
@@ -223,6 +225,7 @@ a:link, a:visited, a:hover, a:active {
   min-width: 120px;
   height: 100%;
   background-image: url(../img/1x/logo-w-sm.svg);
+  background-repeat: no-repeat;
   background-size: contain;
   margin-right: 2.19%;
 
@@ -491,6 +494,57 @@ a:link, a:visited, a:hover, a:active {
   }
 }
 
+/* ヘッダー追従 */
+
+.header.js-fixed {
+  position: fixed;
+  background: #fff;
+  transition: all .4s;
+
+  .site-logo {
+    background-image: url(../img/1x/logo-b-sm.svg);
+  }
+
+  .nav-menu-list__link {
+    color: $textColor !important;
+
+    @include mq(){
+      color: #fff !important;
+    }
+  }
+
+  .nav-menu-list__item {
+
+    &::before {
+      background-color: $textColor;
+
+      @include mq(){
+        color: #fff;
+      }
+    }
+
+    &::after {
+      color: $textColor;
+
+      @include mq(){
+        color: #fff;
+      }
+    }
+  }
+
+  .burger-btn {
+    .bar {
+      background-color: $textColor;
+    }
+
+    &[aria-expanded="true"] {
+      .bar {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
 /*----------------*/
 /* top            */
 /*----------------*/
@@ -501,11 +555,42 @@ a:link, a:visited, a:hover, a:active {
   position: relative;
 }
 
+/* スライダー*/
+@keyframes changeImage {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  15% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
 .slide-list {
   max-width: 1366px;
   height: 688px;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 
   &__item {
     width: 100%;
@@ -513,6 +598,7 @@ a:link, a:visited, a:hover, a:active {
     position: absolute;
     bottom: 0;
     background-size: cover;
+    animation: changeImage 14.5s linear infinite;
 
     @include mq(){
       background-position: center left -300px;
@@ -533,6 +619,7 @@ a:link, a:visited, a:hover, a:active {
 
     &--02 {
       background-image: url(../img/1x/top-image-2.png);
+      animation-delay: 5s;
 
       @include mq(sm){
         background-image: url(../img/1x/top-image-2-sm.png);
@@ -541,10 +628,15 @@ a:link, a:visited, a:hover, a:active {
 
     &--03 {
       background-image: url(../img/1x/top-image-3.png);
+      animation-delay: 10s;
 
       @include mq(sm){
         background-image: url(../img/1x/top-image-3-sm.png);
       }
+    }
+
+    &--02 , &--03 {
+      opacity: 0;
     }
 
   }
