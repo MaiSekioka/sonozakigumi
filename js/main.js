@@ -1,5 +1,5 @@
 $(function(){
-  
+
   $('.burger-btn').on('click',function(){
     if($(this).attr('aria-expanded') == 'false'){
       $(this).attr('aria-expanded',true);
@@ -12,5 +12,24 @@ $(function(){
     }
   });
 
+});
 
+// ヘッダー追従
+
+function fixedHeader(){
+  let height = $('#top').outerHeight();
+  let scroll = $(this).scrollTop();
+  if(height < scroll){
+    $('.header').addClass('js-fixed');
+  } else {
+    $('.header').removeClass('js-fixed');
+  };
+};
+
+$(window).on('scroll', function(){
+  fixedHeader();
+});
+
+$(window).on('load', function(){
+  fixedHeader();
 });
