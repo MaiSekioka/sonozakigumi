@@ -38,34 +38,45 @@ a:link, a:visited, a:hover, a:active {
   font-weight: 700;
   line-height: 1;
 }
-@media screen and (max-width: 768px) {
-  .section-title {
-    font-size: 3.2rem;
-  }
-}
 @media screen and (min-width: 1366px) {
   .section-title {
     font-size: 4.8rem;
   }
 }
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 3.2rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .section-title {
+    font-size: calc(2.8rem + ((1vw - 0.32rem) * 7.2727));
+  }
+}
 .section-title__jp {
   position: relative;
+  display: inline-block;
   font-family: Noto Sans JP;
   font-size: calc(1.7rem + ((1vw - 0.768rem) * 1.1111));
   min-height: 0vw;
   color: #4b6cb7;
   font-weight: 400;
   min-height: 0vw;
-  margin-left: 38px;
+  margin-left: calc(15px + 1em);
+}
+@media screen and (min-width: 1366px) {
+  .section-title__jp {
+    font-size: 2.4rem;
+  }
 }
 @media screen and (max-width: 768px) {
   .section-title__jp {
     font-size: 1.6rem;
   }
 }
-@media screen and (min-width: 1366px) {
+@media screen and (max-width: 375px) {
   .section-title__jp {
-    font-size: 2.4rem;
+    font-size: calc(1.6rem + ((1vw - 0.32rem) * 7.2727));
   }
 }
 .section-title__jp::before {
@@ -73,12 +84,17 @@ a:link, a:visited, a:hover, a:active {
   position: absolute;
   content: "";
   bottom: 50%;
-  left: -33px;
-  width: 31px;
+  left: calc(-1em - 9px);
+  width: calc(1em + 0.5vh);
   height: 1px;
   background-color: #4b6cb7;
   -webkit-transform: rotate(-50deg) translateY(-50%);
           transform: rotate(-50deg) translateY(-50%);
+}
+@media screen and (max-width: 375px) {
+  .section-title__jp::before {
+    left: -25px;
+  }
 }
 
 .section-title--white {
@@ -120,6 +136,7 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (min-width: 1366px) {
   .section-text {
     font-size: 1.6rem;
+    letter-spacing: 0.02;
   }
 }
 
@@ -148,14 +165,19 @@ a:link, a:visited, a:hover, a:active {
   -webkit-transition: background-color ease 0.4s;
   transition: background-color ease 0.4s;
 }
+@media screen and (min-width: 1366px) {
+  .section-btn {
+    font-size: 1.6rem;
+  }
+}
 @media screen and (max-width: 768px) {
   .section-btn {
     font-size: 1.4rem;
   }
 }
-@media screen and (min-width: 1366px) {
+@media screen and (max-width: 375px) {
   .section-btn {
-    font-size: 1.6rem;
+    height: 44px;
   }
 }
 .section-btn:hover {
@@ -194,6 +216,15 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 768px) {
   .tab-br {
     display: block;
+  }
+}
+
+.sp-nobr {
+  display: block;
+}
+@media screen and (max-width: 375px) {
+  .sp-nobr {
+    display: none;
   }
 }
 
@@ -1168,6 +1199,19 @@ a:link, a:visited, a:hover, a:active {
   background-size: 100% 435px;
   background-repeat: no-repeat;
 }
+@media screen and (max-width: 768px) {
+  .services {
+    padding: 100px 0;
+    background-position: center;
+    background-size: 100% 90%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .services {
+    background-position: top 120px right -53px;
+    background-size: 200% 80%;
+  }
+}
 
 .service-media {
   width: 100%;
@@ -1178,10 +1222,31 @@ a:link, a:visited, a:hover, a:active {
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
+@media screen and (max-width: 768px) {
+  .service-media {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .service-media__image {
   width: 45.38%;
   min-height: 440px;
   margin-right: 3.5%;
+}
+@media screen and (max-width: 768px) {
+  .service-media__image {
+    width: calc(100% - 64px);
+    margin: 0 auto;
+    min-height: 240px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .service-media__image {
+    width: 100%;
+    height: 66%;
+  }
 }
 .service-media__img {
   width: 100%;
@@ -1192,6 +1257,18 @@ a:link, a:visited, a:hover, a:active {
 .service-media__body {
   width: 38.2%;
 }
+@media screen and (max-width: 768px) {
+  .service-media__body {
+    width: calc(100% - 64px);
+    margin: 32px auto 0;
+  }
+}
+@media screen and (max-width: 375px) {
+  .service-media__body {
+    width: calc(100% - 40px);
+    margin: 40px auto 0;
+  }
+}
 .service-media__lead {
   margin-top: 5%;
 }
@@ -1200,6 +1277,11 @@ a:link, a:visited, a:hover, a:active {
 }
 .service-media__btn {
   margin-top: 10%;
+}
+@media screen and (max-width: 375px) {
+  .service-media__btn {
+    margin: 34px auto 0;
+  }
 }
 
 /*----------------*/

@@ -64,30 +64,39 @@ a:link, a:visited, a:hover, a:active {
   font-weight: 700;
   line-height: 1;
 
-  @include mq() {
-    font-size: 3.2rem;
-  }
-
   @include mq(xl) {
     font-size: 4.8rem;
   }
 
+  @include mq() {
+    font-size: 3.2rem;
+  }
+
+  @include mq(sm) {
+    font-size: calc(2.8rem + ((1vw - 0.32rem) * 7.2727));
+  }
+
   &__jp {
     position: relative;
+    display: inline-block;
     font-family: Noto Sans JP;
     font-size: calc(1.7rem + ((1vw - 0.768rem) * 1.1111));
     min-height: 0vw;
     color: $subColor;
     font-weight: 400;
     min-height: 0vw;
-    margin-left: 38px;
+    margin-left: calc(15px + 1em);
+
+    @include mq(xl) {
+      font-size: 2.4rem;
+    }
 
     @include mq() {
       font-size: 1.6rem;
     }
-  
-    @include mq(xl) {
-      font-size: 2.4rem;
+
+    @include mq(sm){
+      font-size: calc(1.6rem + ((1vw - 0.32rem) * 7.2727));
     }
 
     &::before {
@@ -95,11 +104,15 @@ a:link, a:visited, a:hover, a:active {
       position: absolute;
       content: '';
       bottom: 50%;
-      left: -33px;
-      width: 31px;
+      left: calc(-1em - 9px);
+      width: calc(1em + 0.5vh);
       height: 1px;
       background-color: $subColor;
       transform: rotate(-50deg) translateY(-50%);
+    
+      @include mq(sm){
+        left: -25px;
+      }
     }
   }
 }
@@ -141,6 +154,7 @@ a:link, a:visited, a:hover, a:active {
 
   @include mq(xl) {
     font-size: 1.6rem;
+    letter-spacing: 0.02;
   }
 }
 
@@ -161,13 +175,19 @@ a:link, a:visited, a:hover, a:active {
   line-height: 1;
   transition: background-color ease .4s;
 
+  @include mq(xl) {
+    font-size: 1.6rem;
+  }
+
   @include mq() {
     font-size: 1.4rem;
   }
 
-  @include mq(xl) {
-    font-size: 1.6rem;
+  @include mq(sm){
+    height: 44px;
   }
+
+
 
   &:hover {
     cursor: pointer;
@@ -199,6 +219,14 @@ a:link, a:visited, a:hover, a:active {
 
   @include mq(){
     display: block;
+  }
+}
+
+.sp-nobr {
+  display: block;
+  
+  @include mq(sm){
+    display: none;
   }
 }
 
@@ -1074,6 +1102,17 @@ body.is-drawerActive > .header.js-fixed {
   background-position: top 160px center;
   background-size: 100% 435px;
   background-repeat: no-repeat;
+
+  @include mq(){
+    padding: 100px 0;
+    background-position: center;
+    background-size: 100% 90%;
+  }
+
+  @include mq(sm) {
+    background-position: top 120px right -53px;
+    background-size: 200% 80%;
+  }
 }
 
 .service-media {
@@ -1081,10 +1120,25 @@ body.is-drawerActive > .header.js-fixed {
   display: flex;
   justify-content: flex-start;
 
+  @include mq(){
+    flex-direction: column;
+  }
+
   &__image {
     width: 45.38%;
     min-height: 440px;
     margin-right: 3.5%;
+
+    @include mq(){
+      width: calc(100% - 64px);
+      margin: 0 auto;
+      min-height: 240px;
+    }
+
+    @include mq(sm){
+      width: 100%;
+      height: 66%;
+    }
   }
 
   &__img {
@@ -1095,6 +1149,16 @@ body.is-drawerActive > .header.js-fixed {
 
   &__body {
     width: 38.2%;
+
+    @include mq(){
+      width: calc(100% - 64px);
+      margin: 32px auto 0;
+    }
+
+    @include mq(sm){
+      width: calc(100% - 40px);
+      margin: 40px auto 0;
+    }
   }
 
   &__lead {
@@ -1107,6 +1171,10 @@ body.is-drawerActive > .header.js-fixed {
 
   &__btn {
     margin-top: 10%;
+
+    @include mq(sm){
+      margin: 34px auto 0;
+    }
   }
 }
 
