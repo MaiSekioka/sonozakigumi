@@ -1674,6 +1674,18 @@ a:link, a:visited, a:hover, a:active {
   background-color: #f0f0f0;
   text-align: center;
 }
+@media screen and (max-width: 375px) {
+  .recruit {
+    padding: 120px 0;
+    background-color: transparent;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 375px) {
+  .recruit__title {
+    padding: 0 20px;
+  }
+}
 
 .recruit-media-wrapper {
   display: -webkit-box;
@@ -1687,17 +1699,48 @@ a:link, a:visited, a:hover, a:active {
   padding: 0 56px;
   margin: 58px auto 0;
 }
+@media screen and (max-width: 768px) {
+  .recruit-media-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 32px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .recruit-media-wrapper {
+    width: 100%;
+    padding: 0;
+    margin-top: 34px;
+  }
+}
 
 .recruit-media {
   position: relative;
   width: 30.7%;
   height: 100%;
 }
+@media screen and (max-width: 768px) {
+  .recruit-media {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .recruit-media {
+    width: 100%;
+  }
+}
 .recruit-media__image {
   position: relative;
   width: 100%;
   padding-top: 76.9%;
   overflow: hidden;
+}
+@media screen and (max-width: 375px) {
+  .recruit-media__image {
+    padding-top: 53.33%;
+  }
 }
 .recruit-media__img {
   position: absolute;
@@ -1737,14 +1780,30 @@ a:link, a:visited, a:hover, a:active {
   -webkit-transition: background-color ease 0.5s;
   transition: background-color ease 0.5s;
 }
+@media screen and (min-width: 1366px) {
+  .recruit-media__link-btn {
+    font-size: 1.6rem;
+  }
+}
 @media screen and (max-width: 768px) {
   .recruit-media__link-btn {
     font-size: 1.4rem;
   }
 }
-@media screen and (min-width: 1366px) {
+@media screen and (max-width: 375px) {
   .recruit-media__link-btn {
-    font-size: 1.6rem;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(24, 40, 72, 0.2);
+    padding-top: 15px 20px;
   }
 }
 .recruit-media__link-btn-arrow {
@@ -1758,6 +1817,12 @@ a:link, a:visited, a:hover, a:active {
   transition: -webkit-transform ease 0.4s;
   transition: transform ease 0.4s;
   transition: transform ease 0.4s, -webkit-transform ease 0.4s;
+}
+@media screen and (max-width: 375px) {
+  .recruit-media__link-btn-arrow {
+    -webkit-transform: skewX(45deg) translate(10px, -7px);
+            transform: skewX(45deg) translate(10px, -7px);
+  }
 }
 .recruit-media:hover {
   cursor: pointer;
@@ -1775,6 +1840,11 @@ a:link, a:visited, a:hover, a:active {
   transition: background-color ease 0.4s;
   background-color: rgba(24, 40, 72, 0.9);
 }
+@media screen and (max-width: 375px) {
+  .recruit-media:hover .recruit-media__link-btn {
+    background-color: rgba(24, 40, 72, 0.2);
+  }
+}
 .recruit-media:hover .recruit-media__link-btn-arrow {
   -webkit-transform: skewX(45deg) translateX(4px);
           transform: skewX(45deg) translateX(4px);
@@ -1783,16 +1853,59 @@ a:link, a:visited, a:hover, a:active {
   transition: transform ease 0.4s;
   transition: transform ease 0.4s, -webkit-transform ease 0.4s;
 }
+@media screen and (max-width: 375px) {
+  .recruit-media:hover .recruit-media__link-btn-arrow {
+    -webkit-transform: skewX(45deg) translate(14px, -7px);
+            transform: skewX(45deg) translate(14px, -7px);
+  }
+}
 
 .recruit-media:nth-of-type(1) {
   margin-top: 80px;
 }
+@media screen and (max-width: 768px) {
+  .recruit-media:nth-of-type(1) {
+    margin-top: 0;
+  }
+}
 .recruit-media:nth-of-type(2) {
   margin-top: 40px;
+}
+@media screen and (max-width: 768px) {
+  .recruit-media:nth-of-type(2) {
+    margin-left: auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .recruit-media:nth-of-type(2) {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .recruit-media:nth-of-type(3) {
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .recruit-media:nth-of-type(3) {
+    margin-left: 0;
+    margin-top: 0;
+  }
 }
 
 .recruit__btn {
   margin: 40px auto 0;
+}
+@media screen and (max-width: 768px) {
+  .recruit__btn {
+    margin: 60px auto 0;
+  }
+}
+@media screen and (max-width: 375px) {
+  .recruit__btn {
+    margin: 40px auto 0;
+  }
 }
 
 /*----------------*/
