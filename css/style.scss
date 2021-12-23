@@ -133,12 +133,16 @@ a:link, a:visited, a:hover, a:active {
   font-size: calc(2.4rem + ((1vw - 0.768rem) * 1.3377));
   font-weight: 500;
 
-  @include mq() {
-    font-size: 2.4rem;
-  }
-
   @include mq(xl) {
     font-size: 3.2rem;
+  }
+
+  @include mq(){
+    font-size: calc(2.3rem + ((1vw - 0.375rem) * 0.2544));
+  }
+
+  @include mq(sm) {
+    font-size: calc(2.2rem + ((1vw - 0.32rem) * 3.6363));
   }
 }
 
@@ -1308,12 +1312,49 @@ body.is-drawerActive > .header.js-fixed {
   background-size: 100% 762px;
   background-repeat: no-repeat;
 
+  @include mq(){
+    padding: 80px 34px 80px 30px;
+    text-align: left;
+    background-position: center;
+    background-size: 100% 90%;
+  }
+
+  @include mq(sm){
+    background-image: url(../img/1x/works-bg-sm.png);
+    background-size: 100% 100%;
+    padding: 30px 0 40px;
+  }
+
+  &__title {
+    @include mq(sm){
+      padding: 0 20px;
+    }
+  }
+
   &__lead {
     margin-top: 31px;
+
+    @include mq(){
+      display: inline-block;
+    }
+
+    @include mq(sm){
+      padding: 0 20px;
+      margin-top: 20px;
+    }
   }
 
   &__text {
     margin-top: 34px;
+
+    @include mq(){
+      display: inline-block;
+    }
+
+    @include mq(sm){
+      padding: 0 20px;
+      margin-top: 16px;
+    }
   }
 }
 
@@ -1324,6 +1365,16 @@ body.is-drawerActive > .header.js-fixed {
   max-height: 424px;
   margin: 33px auto 0;
   padding: 0 60px 0 52px;
+
+  @include mq(){
+    flex-direction: column;
+    padding: 0;
+    max-height: none;
+  }
+
+  @include mq(sm){
+    margin-top: 43px;
+  }
 }
 
 .works-card {
@@ -1335,6 +1386,17 @@ body.is-drawerActive > .header.js-fixed {
   background-color: #fff;
   box-shadow: 0 0 10px 0 rgba(25, 25, 25, 0.25);
   counter-increment: number;
+
+  @include mq(){
+    width: calc(100% - 15px);
+    margin: 0;
+    width: 100%;
+  }
+
+  @include mq(sm){
+    background-color: transparent;
+    box-shadow: none;
+  }
 
   &::before {
     position: absolute;
@@ -1354,14 +1416,30 @@ body.is-drawerActive > .header.js-fixed {
     min-height: 0vw;
     line-height: 1;
 
-    @include mq() {
-      font-size: 1.8rem;
-    }
-  
     @include mq(xl) {
       font-size: 2.4rem;
     }
 
+    @include mq() {
+      font-size: 1.8rem;
+    }
+
+    @include mq(sm){
+      font-size: 2rem;
+      top: calc(160px - 40px);
+      left: 0;
+      max-width: 64px;
+      max-height: 40px;
+      padding: 0 20px;
+      line-height: 40px;
+    }
+
+  }
+
+  & + .works-card {
+    @include mq(){
+      margin-top: 40px;
+    }
   }
 
   &__image {
@@ -1369,6 +1447,11 @@ body.is-drawerActive > .header.js-fixed {
     width: 100%;
     padding-top: 50.84%;
     overflow: hidden;
+
+    @include mq(sm){
+      padding-top: 0;
+      height: 160px;
+    }
   }
 
   &__img {
@@ -1378,11 +1461,21 @@ body.is-drawerActive > .header.js-fixed {
     right: 0;
     transform: translateY(-50%);
     height: 100%;
+
+    @include mq(sm){
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__body {
     padding: 30px 24px 36px 25px;
     text-align: left;
+
+    @include mq(sm){
+      padding: 22px 20px 0;
+    }
   }
 
   &__title {
@@ -1390,14 +1483,16 @@ body.is-drawerActive > .header.js-fixed {
     min-height: 0vw;
     color: $accentColor;
     font-weight: 500;
-
-    @include mq() {
-      font-size: 1.8rem;
-    }
+    line-height: 1;
 
     @include mq(xl) {
       font-size: 2.4rem;
     }
+
+    @include mq() {
+      font-size: 2rem;
+    }
+
   }
 
   &__text {
@@ -1405,13 +1500,15 @@ body.is-drawerActive > .header.js-fixed {
     min-height: 0vw;
     margin-top: 24px;
     letter-spacing: 0.02em;
+    line-height: 2;
+
+    @include mq(xl) {
+      font-size: 1.6rem;
+    }
 
     @include mq() {
       font-size: 1.4rem;
-    }
-  
-    @include mq(xl) {
-      font-size: 1.6rem;
+      margin-top: 18px;
     }
   }
 }
