@@ -1122,8 +1122,9 @@ body.is-drawerActive > .header.js-fixed {
   }
 
   @include mq(sm) {
-    background-position: top 120px right -53px;
-    background-size: 200% 80%;
+    background-position: top 120px right -30px;
+    background-size: 200% 100%;
+    padding: 120px 0 48px;
   }
 }
 

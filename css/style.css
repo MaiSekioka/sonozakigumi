@@ -1222,8 +1222,9 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 375px) {
   .services {
-    background-position: top 120px right -53px;
-    background-size: 200% 80%;
+    background-position: top 120px right -30px;
+    background-size: 200% 100%;
+    padding: 120px 0 48px;
   }
 }
 
