@@ -148,13 +148,17 @@ a:link, a:visited, a:hover, a:active {
   line-height: 2;
   letter-spacing: 0.02em;
 
-  @include mq() {
-    font-size: 1.4rem;
-  }
-
   @include mq(xl) {
     font-size: 1.6rem;
     letter-spacing: 0.02;
+  }
+
+  @include mq(){
+    font-size: 1.4rem;
+  }
+
+  @include mq(sm) {
+    font-size: calc(1.3rem + ((1vw - 0.32rem) * 1.8181));
   }
 }
 
@@ -219,6 +223,14 @@ a:link, a:visited, a:hover, a:active {
 
   @include mq(){
     display: block;
+  }
+}
+
+.tab-nobr {
+  display: block;
+
+  @include mq(){
+    display: none;
   }
 }
 
@@ -1188,12 +1200,26 @@ body.is-drawerActive > .header.js-fixed {
   background-image: url(../img/1x/about-bg.jpg);
   background-size: cover;
 
+  @include mq(){
+    padding: 40px 32px;
+  }
+
+  @include mq(sm){
+    padding: 120px 20px;
+    background-image: none;
+    height: auto;
+  }
+
   &-inner {
     max-width: 1016px;
     height: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
+
+    @include mq(sm){
+      display: block;
+    }
   }
 }
 
@@ -1206,16 +1232,67 @@ body.is-drawerActive > .header.js-fixed {
   padding: unquote('min(48px,5vw)');
   background-color: #fff;
 
+  @include mq(){
+    min-width: auto;
+    margin: 0 auto;
+    padding: 48px 32px;
+  }
+
+  @include mq(sm){
+    padding: 0;
+  }
+
+  &-inner {
+    @include mq(){
+      height: 100%;
+    }
+
+    @include mq(sm){
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__body {
+    @include mq(sm){
+      margin-top: 40px;
+    }
+  }
+
   &__text {
     margin-top: 6.9%;
+
+    @include mq(){
+      max-width: 400px;
+    }
   }
 
   &__btn {
     margin-top: 7.8%;
+
+    @include mq(sm){
+      margin: 34px auto 0;
+    }
   }
 
   &__image {
+    max-width: 408px;
+    height: 120px;
+    background-image: url(../img/1x/about.jpg);
+    background-position: center;
     margin-top: 8%;
+
+    @include mq(){
+      margin-top: 10%;
+    }
+
+    @include mq(sm) {
+      max-width: 100%;
+      min-height: 248px;
+      background-image: url(../img/1x/about-bg.jpg);
+      background-size: cover;
+      margin-top: 0;
+    }
   }
 }
 
