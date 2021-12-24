@@ -1919,8 +1919,32 @@ a:link, a:visited, a:hover, a:active {
   padding: 80px 0;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .contact {
+    background-position: center;
+    padding: 96px 32px;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 375px) {
+  .contact {
+    padding: 96px 20px;
+  }
+}
 .contact__text {
   margin-top: 40px;
+}
+@media screen and (max-width: 768px) {
+  .contact__text {
+    margin-top: 34px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .contact__text {
+    font-size: calc(1.3rem + ((1vw - 0.32rem) * 5.4545));
+    margin-top: 22px;
+    letter-spacing: 0;
+  }
 }
 
 .cta-btn-wrapper {
@@ -1933,6 +1957,25 @@ a:link, a:visited, a:hover, a:active {
   max-width: 784px;
   margin: 55px auto 0;
   padding: 0 32px;
+}
+@media screen and (max-width: 768px) {
+  .cta-btn-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: none;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cta-btn-wrapper {
+    padding: 0;
+    margin: 24px auto 0;
+  }
 }
 
 .cta-btn {
@@ -1953,14 +1996,29 @@ a:link, a:visited, a:hover, a:active {
   font-size: calc(1.4rem + ((1vw - 0.768rem) * 0.3344));
   line-height: 1;
 }
-@media screen and (max-width: 768px) {
-  .cta-btn {
-    font-size: 1.4rem;
-  }
-}
 @media screen and (min-width: 1366px) {
   .cta-btn {
     font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cta-btn {
+    font-size: 1.4rem;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cta-btn {
+    height: 48px;
+    padding: 0 24px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cta-btn + .cta-btn {
+    margin-top: 24px;
   }
 }
 .cta-btn__icon {
@@ -1971,10 +2029,24 @@ a:link, a:visited, a:hover, a:active {
   height: 20px;
   background-image: url(../img/1x/backhoe.svg);
 }
+@media screen and (max-width: 375px) {
+  .cta-btn__icon--construction {
+    width: 16px;
+    height: 12px;
+    background-size: contain;
+  }
+}
 .cta-btn__icon--custom-order {
   width: 20px;
   height: 17px;
   background-image: url(../img/1x/factory.svg);
+}
+@media screen and (max-width: 375px) {
+  .cta-btn__icon--custom-order {
+    width: 16px;
+    height: 12px;
+    background-size: contain;
+  }
 }
 .cta-btn__arrow {
   width: 16px;

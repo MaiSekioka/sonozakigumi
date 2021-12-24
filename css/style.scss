@@ -1729,8 +1729,28 @@ body.is-drawerActive > .header.js-fixed {
   padding: 80px 0;
   text-align: center;
 
+  @include mq(){
+    background-position: center;
+    padding: 96px 32px;
+    text-align: left;
+  }
+
+  @include mq(sm){
+    padding: 96px 20px;
+  }
+
   &__text {
     margin-top: 40px;
+
+    @include mq(){
+      margin-top: 34px;
+    }
+
+    @include mq(sm){
+      font-size: calc(1.3rem + ((1vw - 0.32rem) * 5.4545));
+      margin-top: 22px;
+      letter-spacing: 0;
+    }
   }
 }
 
@@ -1740,6 +1760,18 @@ body.is-drawerActive > .header.js-fixed {
   max-width: 784px;
   margin: 55px auto 0;
   padding: 0 32px;
+
+  @include mq(){
+    flex-direction: column;
+    align-items: center;
+    max-width: none;
+    width: 100%;
+  }
+
+  @include mq(sm){
+    padding: 0;
+    margin: 24px auto 0;
+  }
 }
 
 .cta-btn {
@@ -1753,12 +1785,25 @@ body.is-drawerActive > .header.js-fixed {
   font-size: calc(1.4rem + ((1vw - 0.768rem) * 0.3344));
   line-height: 1;
 
-  @include mq() {
-    font-size: 1.4rem;
-  }
-
   @include mq(xl) {
     font-size: 1.6rem;
+  }
+
+  @include mq() {
+    font-size: 1.4rem;
+    max-width: 100%;
+  }
+
+  @include mq(sm){
+    height: 48px;
+    padding: 0 24px;
+    justify-content: space-between;
+  }
+
+  & + .cta-btn {
+    @include mq(){
+      margin-top: 24px;
+    }
   }
 
   &__icon {
@@ -1768,11 +1813,23 @@ body.is-drawerActive > .header.js-fixed {
       width: 24px;
       height: 20px;
       background-image: url(../img/1x/backhoe.svg);
+
+      @include mq(sm) {
+        width: 16px;
+        height: 12px;
+        background-size: contain;
+      }
     }
     &--custom-order {
       width: 20px;
       height: 17px;
       background-image: url(../img/1x/factory.svg);
+
+      @include mq(sm) {
+        width: 16px;
+        height: 12px;
+        background-size: contain;
+      }
     }
   }
 
