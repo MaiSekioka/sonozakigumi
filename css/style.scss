@@ -34,6 +34,7 @@ body {
   “Hiragino Sans”, “ヒラギノ角ゴシック”, “Hiragino Kaku Gothic ProN”, “ヒラギノ角ゴ ProN”,
   “MS Gothic”, “Osaka”, sans-serif;
   font-size: 1.6rem;
+  overflow-x: hidden;
 }
 
 body > * {
@@ -450,7 +451,7 @@ a:link, a:visited, a:hover, a:active {
     top: 0;
     z-index: -1;
     display: block;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: $subColor;
     transition: .4s;
@@ -692,7 +693,6 @@ body.is-drawerActive > .header.js-fixed {
   }
   10% {
     opacity: 0;
-    transform: scale(1);
   }
   15% {
     opacity: 1;
@@ -711,7 +711,6 @@ body.is-drawerActive > .header.js-fixed {
   }
   100% {
     opacity: 0;
-    transform: scale(1.2);
   }
 }
 
