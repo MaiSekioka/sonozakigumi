@@ -41,6 +41,10 @@ body > * {
   box-sizing: border-box;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 img {
   max-width: 100%;
   vertical-align: bottom;
@@ -294,12 +298,14 @@ a:link, a:visited, a:hover, a:active {
 .header {
   position: relative;
   z-index: 10;
-  width: 100%;
+  width: 100vw;
   height: 80px;
   background: linear-gradient(to right, #4b6cb7, #182848);
   transition: position .3s;
+  padding: 25px unquote('min(39px,3.2vw)');
 
   @include mq() {
+    padding: 15px 20px;
     height: 56px;
   }
 }
@@ -310,11 +316,8 @@ a:link, a:visited, a:hover, a:active {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 25px unquote('min(39px,3.2vw)');
-  margin: 0 auto;
 
   @include mq() {
-    padding: 15px 20px;
     justify-content: space-between;
   }
 }
@@ -449,6 +452,7 @@ a:link, a:visited, a:hover, a:active {
   &[aria-hidden="false"] {
     position: absolute;
     top: 0;
+    left: 0;
     z-index: -1;
     display: block;
     width: 100%;

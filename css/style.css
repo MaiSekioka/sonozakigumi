@@ -15,6 +15,10 @@ body > * {
           box-sizing: border-box;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 img {
   max-width: 100%;
   vertical-align: bottom;
@@ -311,15 +315,17 @@ a:link, a:visited, a:hover, a:active {
 .header {
   position: relative;
   z-index: 10;
-  width: 100%;
+  width: 100vw;
   height: 80px;
   background: -webkit-gradient(linear, left top, right top, from(#4b6cb7), to(#182848));
   background: linear-gradient(to right, #4b6cb7, #182848);
   -webkit-transition: position 0.3s;
   transition: position 0.3s;
+  padding: 25px min(39px,3.2vw);
 }
 @media screen and (max-width: 768px) {
   .header {
+    padding: 15px 20px;
     height: 56px;
   }
 }
@@ -336,12 +342,9 @@ a:link, a:visited, a:hover, a:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 25px min(39px,3.2vw);
-  margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
   .header-inner {
-    padding: 15px 20px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -484,6 +487,7 @@ a:link, a:visited, a:hover, a:active {
 .nav-menu-bg[aria-hidden=false] {
   position: absolute;
   top: 0;
+  left: 0;
   z-index: -1;
   display: block;
   width: 100%;
